@@ -1,11 +1,14 @@
-import { HomePage } from "./pages/HomePage"
+import { HomePage } from "./pages/HomePage";
+import { TodoProvider } from "./providers/TodoContext/TodoContext";
 
 function App() {
-  return (
-    <>
-      <HomePage />
-    </>
-  )
+   return (
+      <>
+         <TodoProvider>
+            <HomePage />
+         </TodoProvider>
+      </>
+   );
 }
 
-export default App
+export default App;

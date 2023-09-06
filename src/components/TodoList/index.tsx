@@ -1,16 +1,14 @@
-import { ITodo } from "../../interfaces/todo";
+import { useContext } from "react";
 import { TodoCard } from "./TodoCard";
+import { TodoContext } from "../../providers/TodoContext/TodoContext";
 
-interface ITodoListProps {
-   todoList: ITodo[];
-   removeTodo: (removingId: string) => void;
-}
-
-export const TodoList = ({ todoList, removeTodo }: ITodoListProps) => {
+export const TodoList = () => {
+   const { todoList } = useContext(TodoContext);
+   
    return (
       <ul>
          {todoList.map((todo) => (
-            <TodoCard key={todo.id} todo={todo} removeTodo={removeTodo} />
+            <TodoCard key={todo.id} todo={todo} />
          ))}
       </ul>
    );
